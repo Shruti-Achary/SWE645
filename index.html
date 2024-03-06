@@ -1,0 +1,183 @@
+<!--Name: Shruti Selvaraj Achary
+    G#: G01447238-->
+
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    <title>Student Survey Form</title>
+
+    <style>
+        body 
+        {
+            background-image: url('Form.jpg'); /*Image URL*/
+            background-size: 1525px 2110px; /*Image Size*/
+            background-position: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 
+        {
+            text-align: center; /*Title of the Form Alignment*/
+            color: rgb(255, 255, 255);
+            padding: 100px;
+        }
+
+        form 
+        {
+            background-color: rgba(255, 255, 255, 0.8);
+            position: absolute;
+            border-radius: 10px;
+            width: 50%;
+            margin: 10px 350px;
+            padding: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        label 
+        {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input,select,textarea 
+        {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] 
+        {
+            margin-bottom: 5px;
+            margin-left: 300px;
+        }
+
+        input[type="submit"] 
+        {
+            background-color: #08740c; /*Submit Button Background Color*/
+            color: white;
+            cursor: pointer;
+            width: 48%;
+            margin-left: 2px;
+        }
+
+        input[type="submit"]:hover 
+        {
+            background-color: #45a049; /*Submit Button Hover Color*/
+        }
+
+        input[type="reset"] 
+        {
+            background-color: #08740c; /*Reset Button Background Color*/
+            color: white;
+            cursor: pointer;
+            width: 48%;
+            margin-left: 390px;
+            position: relative;
+            top: -45px;
+        }
+
+        input[type="reset"]:hover 
+        {
+            background-color: #45a049; /*Reset Button Hover Color*/
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Student Survey Form</h1>
+    <form action="#" method="post">
+        <a href="http://sa645-assignment1s3.s3-website-us-east-1.amazonaws.com" target="_blank">Go to Index Page</a>
+        <br>
+        <br>
+
+        <!--Form Details-->
+        <label for="firstName">First Name<span style="color: red;">*</span></label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name<span style="color: red;">*</span></label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="streetAddress">Street Address<span style="color: red;">*</span></label>
+        <input type="text" id="streetAddress" name="streetAddress" required>
+
+        <label for="city">City<span style="color: red;">*</span></label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="state">State<span style="color: red;">*</span></label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="zip">Zip<span style="color: red;">*</span></label>
+        <input type="text" id="zip" name="zip" required>
+
+        <label for="telephoneNumber">Telephone Number<span style="color: red;">*</span></label>
+        <input type="tel" id="telephoneNumber" name="telephoneNumber" required>
+
+        <label for="email">E-mail<span style="color: red;">*</span></label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="dateOfSurvey">Date of Survey<span style="color: red;">*</span></label>
+        <input type="date" id="dateOfSurvey" name="dateOfSurvey" required>
+        <br>
+        <br>
+
+        <!--Checkbox Contents-->
+        <label><strong>What did you like most about the campus?</strong><span style="color: red;">*</span></label>
+        <input type="checkbox" id="likedStudents" name="liked" value="students">
+        <label for="likedStudents">Students</label>
+        <input type="checkbox" id="likedLocation" name="liked" value="location">
+        <label for="likedLocation">Location</label>
+        <input type="checkbox" id="likedCampus" name="liked" value="campus">
+        <label for="likedCampus">Campus</label>
+        <input type="checkbox" id="likedAtmosphere" name="liked" value="atmosphere">
+        <label for="likedAtmosphere">Atmosphere</label>
+        <input type="checkbox" id="likedDormRooms" name="liked" value="dorm rooms">
+        <label for="likedDormRooms">Dorm Rooms</label>
+        <input type="checkbox" id="likedSports" name="liked" value="sports">
+        <label for="likedSports">Sports</label></br>
+
+        <!--Radio Button Contents-->
+        <label><strong>How did you become interested in the university?</strong><span style="color: red;">*</span></label>
+        <input type="radio" id="interestFriends" name="interested" value="friends">
+        <label for="interestFriends">Friends</label>
+        <input type="radio" id="interestTelevision" name="interested" value="television">
+        <label for="interestTelevision">Television</label>
+        <input type="radio" id="interestInternet" name="interested" value="internet">
+        <label for="interestInternet">Internet</label>
+        <input type="radio" id="interestOther" name="interested" value="other">
+        <label for="interestOther">Other</label></br>
+
+        <!--Drop-down list Contents-->
+        <label for="recommendation"><strong>Likelihood of Recommending</strong><span style="color: red;">*</span></label>
+        <select id="recommendation" name="recommendation" required>
+            <option value="very_likely">Very Likely</option>
+            <option value="likely">Likely</option>
+            <option value="unlikely">Unlikely</option>
+        </select>
+        <br>
+        <br>
+
+        <label for="raffle"><strong>Raffle (Enter at least ten comma-separated numbers from 1 through 100)</strong><span style="color: red;">*</span></label>
+        <input type="text" id="raffle" name="raffle" pattern="(\d{1,2}(,\s*\d{1,2}){9})" required>
+        <br>
+        <br>
+
+        <!--Comment Section-->
+        <label for="comments"><strong>Additional Comments</strong></label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+        <br>
+        <br>
+
+        <!--Submit and Cancel Button-->
+        <input type="submit" value="Submit"> 
+        <input type="reset" value="Cancel">
+    </form>
+</body>
+</html>
