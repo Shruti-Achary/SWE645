@@ -14,7 +14,7 @@ pipeline {
                sh 'jar -cvf studentsurvey.war -C main/webapp .'
                //sh 'echo ${BUILD_TIMESTAMP}'
 
-               docker.withRegistry('', registryCredential){
+               docker.withRegistry('https://index.docker.io/v1/', registryCredential){
                   def customImage=docker.build("sachar6/studentsurvey645:${env.TIMESTAMP}")
                }
             }
@@ -24,7 +24,7 @@ pipeline {
       stage('Push Image to Dockerhub') {
          steps {
             script{
-               docker.withRegistry('', registryCredential){
+               docker.withRegistry('https://index.docker.io/v1/', registryCredential){
                   sh "docker push sachar6/studentsurvey645:${env.TIMESTAMP}"
                }
             }
