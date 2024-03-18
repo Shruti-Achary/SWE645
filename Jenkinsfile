@@ -42,7 +42,7 @@ pipeline {
       stage('Deploying to Rancher using Load Balancer as a service') {
          steps {
             script{
-               sh "kubectl set image deployment/student-survey-lb container-0=sachar6/studentsurvey645:${env.TIMESTAMP}"
+               sh "kubectl set image deployment/student-survey container-0=sachar6/studentsurvey645:${env.TIMESTAMP}"
             }
          }
       }
