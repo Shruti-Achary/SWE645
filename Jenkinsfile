@@ -34,7 +34,7 @@ pipeline {
       stage('Deploying Rancher to single pod') {
          steps {
             script{
-               sh "kubectl set image deployment/one-life container-0=sachar6/studentsurvey645:${env.TIMESTAMP}"
+               sh "kubectl set image deployment/one-life-deployment container-0=sachar6/studentsurvey645:${env.TIMESTAMP}"
             }
          }
       }
@@ -42,7 +42,7 @@ pipeline {
       stage('Deploying to Rancher using Load Balancer as a service') {
          steps {
             script{
-               sh "kubectl set image deployment/one-life container-0=sachar6/studentsurvey645:${env.TIMESTAMP}"
+               sh "kubectl set image deployment/one-life-deployment container-0=sachar6/studentsurvey645:${env.TIMESTAMP}"
             }
          }
       }
